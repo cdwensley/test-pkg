@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Reading data chunk from the PackageInfo.g file --> 
+
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+  [<!ENTITY test-pkg "<Package>Test-Pkg</Package>"> 
+   <#Include Label="PKGVERSIONDATA"> 
+  ]> 
+
+<Book Name="test-pkg"> 
+
+<TitlePage>
+  <Title>&test-pkg;</Title>
+  <Subtitle>A really trivial GAP package</Subtitle>
+  <Version>Version &TESTPKGVERSION;</Version>   
+  <Date>&TESTPKGRELEASEDATE;</Date> 
+  <Author> Chris Wensley
+    <Email>cdwensley.maths@btinternet.com</Email>
+    <Homepage>http://pages.bangor.ac.uk/~mas023/</Homepage>
+  </Author>
+
+<Abstract>
+The <Package>test-pkg</Package> package does virtually nothing. 
+The plan is to use it to find a possible glitch in ReleaseTools for GitHub.
+</Abstract>
+
+<Copyright> 
+<Index>License</Index>
+&copyright; &TESTPKGCOPYRIGHTYEARS; Chris Wensley <P/>
+
+<Package>test-pkg</Package> is free software; you can redistribute it 
+and/or modify it under the terms of the 
+<URL Text="GNU General Public License">
+http://www.fsf.org/licenses/gpl.html</URL> 
+as published by the Free Software Foundation; 
+either version 2 of the License, or (at your option) any later version.
+</Copyright> 
+
+<Acknowledgements>
+This documentation was prepared with the <Package>GAPDoc</Package> 
+package of Frank L&#xfc;beck and Max Neunh&#xf6;ffer. 
+<P/> 
+The procedure used to mount new releases on GitHub uses the packages 
+<Package>GitHubPagesForGAP</Package> and <Package>ReleaseTools</Package> 
+of Max Horn. 
+</Acknowledgements>
+
+</TitlePage>
+
+<TableOfContents/>
+
+<Body>
+
+<Chapter Label="intro">
+<Heading>Introduction</Heading>
+
+The package is loaded into &GAP; with the command
+<Example>
+<![CDATA[
+gap> LoadPackage( "kan" ); 
+]]>
+</Example>
+
+This package may be obtained as a compressed tar file 
+<File>&TESTPKGTARFILENAME;</File>
+by ftp from one of the following sites: 
+<List>
+<Item>
+any &GAP; archive, e.g. 
+<URL>http://www.gap-system.org/Packages/packages.html</URL>; 
+</Item>
+<Item>
+the package GitHub repository: 
+<URL>https://gap-packages.github.io/test-pkg</URL>. 
+</Item>
+</List>
+
+<P/>
+The information parameter <C>InfoTestPkg</C> takes default value <C>0</C>.
+When raised to a higher value, additional information is printed out.
+<P/> 
+Once the package is loaded, the manual <Code>doc/manual.pdf</Code> 
+can be found in the documentation folder. 
+The <Code>html</Code> versions, with or without MathJax, 
+may be rebuilt as follows. 
+<P/>
+<Example>
+<![CDATA[
+gap> InfoLevel( InfoTestPkg );
+0
+gap> ReadPackage( "test-pkg, "makedoc.g" ); 
+]]>
+</Example>
+<P/>
+Please send bug reports, suggestions and other comments to the second author,
+or use the GitHub issue tracker at 
+<URL>https://github.com/cdwensley/test-pkg/issues/new</URL>.  
+<P/>
+
+The only reference in the references section is <Cite Key="AlWe" />. 
+This has no relevance at all to this package, but is included to test 
+the referencing mechanism in <Package>GAPDoc</Package>. 
+<P/> 
+
+</Chapter> 
+
+
+<Chapter Label="chap-fns">
+<Heading>Functions</Heading>
+
+<Section Label="sec-gpds">
+<Heading>Useless properties for groups</Heading>
+
+<ManSection>
+   <Prop Name="IsOfNoInterestWhatsoever"
+         Arg="grp" />
+<Description>
+This is the only function defined in this package. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> s3 := Group( (1,2), (2,3) );; 
+gap> IsOfNoInterestWhatsoever( s3 );
+false
+]]>
+</Example>
+
+</Section> 
+
+</Chapter> 
+
+</Body>
+
+<Bibliography Databases="bib.xml"/>
+
+<TheIndex/>
+
+</Book>

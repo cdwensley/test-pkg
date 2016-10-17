@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE file SYSTEM "bibxmlext.dtd">
+<file>
+
+<entry id="AlWe"><article>
+  <author>
+    <name><first>Murat</first><last>Alp</last></name>
+    <name><first>Christopher D.</first><last>Wensley</last></name>
+  </author>  
+  <title>Automorphisms and homotopies of groupoids and crossed modules</title>
+  <journal>Applied Categorical Structures</journal>
+  <year>2010</year>
+  <volume>18</volume>
+  <pages>473&ndash;495</pages>
+</article></entry>
+
+</file>
